@@ -9978,6 +9978,10 @@ p {
   transition: transform 0.1s;
   transition-timing-function: ease-in-out;
   z-index: 0;
+  border-color: #444A;
+  border-width: 1px;
+  border-top-color: #777A;
+  border-left-color: #777A;
 }
 
 .btn-custom {

@@ -1,81 +1,91 @@
+$enable-responsive-font-sizes: true;
 
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,400;0,500;0,700;0,900;1,200;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
-console.log('hello from app.js');
+$font-family-base: 'Barlow Condensed', sans-serif;
 
-var app = angular.module('PortfolioApp', []);
+$body-bg: #000000;
+$body-color: #FFFFFF;
 
-app.controller('AppCtrl', ['$scope', function($scope) {
+$card-bg: #333333;
+$card-color: #000;
+$card-border: #222;
 
-	$scope.apps = APPS;
-	$scope.selectedApp = $scope.apps[0];
+// Bootstrap and its default variables
+@import "../CSS/bootstrap-4.5.3/scss/bootstrap";
 
-	$scope.preview = function(app){
-		$scope.selectedApp = app;
-		//console.log("Previewing, like really, " + app.name);
-		$('#previewModal').modal('show');
-	};
+body, {
+	background-color: #000000;
+	background-image: linear-gradient(rgba(20,24,26,1) 80%, rgba(10,10,10,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(80%,#121418), color-stop(100%,#000000)); 
+	background: -webkit-linear-gradient(top,  rgba(12,13,14,1) 0%, rgba(20,24,26,1) 80%, rgba(10,10,10,1) 100%); 
+	font-family: "Lato", sans-serif;
+	height: 100%;
+	width: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-	$scope.showBGImg = function(app){
-		if(app.image){
-			var id = "#" + app.code + "-card-id";
-			var url = "photos/" + app.image;
-			console.log(url);
-			console.log(id);
-			//background-repeat: no-repeat;
-			$(id).css("background-image", "linear-gradient(180deg,  rgba(20,24,26,0.75) 50%, rgba(10,10,10,1) 100%), url('photos/ROR_sm.jpg')" );
-			$(id).css("background-repeat", "no-repeat");
-			$(id).css("background-position", "center");
-			$(id).css("background-size", "cover");
-		}
-	};
+h1, h2, h3, h4, h5, h5, .display {
+	font-family: 'Barlow Condensed', sans-serif;
+	font-weight: lighter;
+}
 
-	$scope.applyImages = function(){
-		for(i in $scope.apps){
-			var app = $scope.apps[i];
-			console.log(app);
-			$scope.showBGImg(app);
-		}
-	}
+p {
+	font-weight: lighter;
+}
 
-	//$scope.applyImages();
+.portfolio-item {
+	background-image: linear-gradient(30deg, rgba(20,24,26,1) 80%, rgba(10,10,10,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(80%,#121418), color-stop(100%,#000000));
+	cursor: pointer;
+	transition: transform 0.1s;
+	transition-timing-function: ease-in-out;
+	z-index: 0;
+	border-color: #444A; 
+	border-width: 1px; 
+	border-top-color: #777A; 
+	border-left-color: #777A;
+}
 
-	//$("#ROR-card-id").css("background-image", "url('photos/ROR_sm.jpg')" );
+.btn-custom {
+	color: $secondary;
+	border-radius: 15px;
+	border-width: 0px;
+	z-index: 2;
+}
 
-	//console.log($("#ROR-card-id"))
+/*.portfolio-bg-image {
+	background-image:
+    linear-gradient(180deg,  rgba(20,24,26,0.75) 50%, rgba(10,10,10,1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}*/
 
-}]);
+.modal-content {
+  background-color: #000;
+	background-image: linear-gradient(rgba(20,24,26,1) 80%, rgba(10,10,10,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(80%,#121418), color-stop(100%,#000000)); 
+	background: -webkit-linear-gradient(top,  rgba(12,13,14,1) 0%, rgba(20,24,26,1) 80%, rgba(10,10,10,1) 100%);  
 
-var APPS = [
-	{"name":"Rules of the Road",
-	"code":"ROR",
-	"description":"A testing app used to administer and track resutls of regular testing of USCG Collision Regulations, also know as COLREGS or Rules of the Road.",
-	"image":"ROR_sm.jpg"},
-	{"name":"Classes",
-	"code":"CLS",
-	"description":"A management system for offering courses, guaging insterest and tracking participation in various subjects."},
-	{"name":"TicketBooth",
-	"code":"TB",
-	"description":"A troubleticket log and management system for creating and tracking trouble call items."},
-	{"name":"Logbook",
-	"code":"LB",
-	"description":"A digital deck log."},
-	{"name":"Maps",
-	"code":"MAPS",
-	"description":"Various custom stylized maps of the world."},
-	{"name":"Photo Album",
-	"code":"PAL",
-	"description":"A simple web photo album"},
-	{"name":"Logo Folio",
-	"code":"LF",
-	"description":"A folio of logos."},
-	{"name":"Animations",
-	"code":"ANI",
-	"description":"A small sample if fun CSS animations."},
-];
+	border-color: $dark;
+}
+
+.modal-header {
+	border-bottom-color: $dark;
+}
+
+/*.portfolio-item:hover {
+	transform: translate(0px, -3px);
+}*/
 
 
 /*
-add or remove lines to change the size of the js file. It will force the browser to reload the CSS instead of
+add or remove lines to change the size of the CSS file. It will force the browser to reload the CSS instead of
 using the cached version because the file size will change.
 
 Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum Lorum ipsum 

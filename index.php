@@ -49,8 +49,8 @@
 
 		<div class="row">
 			<div class="col-lg-4 mb-4" ng-repeat="app in apps">
-				<div class="card portfolio-item ng-cloak" style="border-color: #444A; border-width: 1px; border-top-color: #777A; border-left-color: #777A; "
-					
+				<div class="card portfolio-item" style=" "
+					ng-class="{'portfolio-bg-image':(app.image)}" 
 					ng-attr-id="{{app.code}}-card-id"
 				>
 					<div class="card-body" style="min-height: 400px;">
