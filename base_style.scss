@@ -1,0 +1,86 @@
+@import url("https://use.typekit.net/fwo4yqm.css");
+@import "./fontawesome/scss/fontawesome.scss";
+@import "./fontawesome/scss/solid.scss";
+@import "./fontawesome/scss/brands.scss";
+
+body {
+	font-family: soleil, futura, sans-serif;
+	font-style: normal;
+}
+
+header {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+main {
+	width: 100%;
+	display: flex;
+}
+
+footer {
+	position: absolute;
+	bottom: 0pt;
+	text-align: center;
+	padding: 20pt;
+	width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+}
+
+
+
+section>img {
+	width: 150pt;
+	height: 150pt;
+	border-radius: 50%;
+	float: left;
+}
+
+.name-hero {
+	text-transform: lowercase;
+	color: #023859;
+}
+
+.footer-text {
+	color: #B1B1B1;
+	font-weight: lighter;
+	font-size: 12pt;
+	line-height: 18pt;
+	text-transform: lowercase;
+}
+
+.twitter {
+	@extend %fa-icon;
+	@extend .fab;
+	&:before {
+		content: fa-content($fa-var-twitter);
+	}
+}
+
+.instagram {
+	@extend %fa-icon;
+	@extend .fab;
+	&:before {
+		content: fa-content($fa-var-instagram);
+	}
+}
+
+.youtube {
+	@extend %fa-icon;
+	@extend .fab;
+	&:before {
+		content: fa-content($fa-var-youtube);
+	}
+}
+
+.github {
+	@extend %fa-icon;
+	@extend .fab;
+	&:before {
+		content: fa-content($fa-var-github);
+	}
+}
