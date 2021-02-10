@@ -6185,13 +6185,23 @@ section > img {
 }
 
 .portfolio-item {
-  flex: 3 1 350pt;
-  width: 350pt;
-  max-width: 350pt;
+  flex: 3 1 150pt;
+  width: 150pt;
+  padding: 20pt;
 }
 
 .portfolio-item > img {
   width: 100%;
+  border-radius: 6pt;
+}
+
+.portfolio-item > h2, .portfolio-item > p {
+  padding: 10pt;
+  font-size: 18pt;
+}
+
+.portfolio-item > h2 {
+  font-weight: bolder;
 }
 
 .name-hero {
@@ -6219,13 +6229,16 @@ nav > a {
   font-size: 26pt;
   font-weight: lighter;
   text-decoration: none;
-  padding: 20pt;
+  padding: 10pt;
+  padding-bottom: 20pt;
+  margin: 0pt 20pt;
 }
 
 .nav-link.active {
   border-bottom: solid;
-  border-width: 1pt;
+  border-width: 2pt;
   border-color: var(--primary);
+  stroke-linecap: round;
 }
 
 /* footer styles */
