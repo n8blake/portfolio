@@ -110,6 +110,20 @@ section>img {
 	width: 50%;
 }
 
+p>a {
+	text-decoration: none;
+	color: tint(#023859, 20%);
+}
+
+p>a:hover {
+	color: shade(#023859, 20%);
+	text-decoration: underline;
+}
+
+p>a:active {
+	color: shade(#023859, 60%);
+}
+
 a.portfolio-link {
 	display: flex;
 	flex-direction:row;

@@ -6223,6 +6223,20 @@ section > img {
   width: 50%;
 }
 
+p > a {
+  text-decoration: none;
+  color: #35607a;
+}
+
+p > a:hover {
+  color: #022d47;
+  text-decoration: underline;
+}
+
+p > a:active {
+  color: #011624;
+}
+
 a.portfolio-link {
   display: flex;
   flex-direction: row;
