@@ -15,10 +15,10 @@
 .fal,
 .fad,
 .fab,
-.github,
-.youtube,
-.instagram,
-.twitter {
+.github::before,
+.youtube::before,
+.instagram::before,
+.twitter::before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -28,7 +28,7 @@
   line-height: 1;
 }
 
-.github, .youtube, .instagram, .twitter {
+.github::before, .youtube::before, .instagram::before, .twitter::before {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
@@ -133,10 +133,10 @@
 .far.fa-pull-left,
 .fal.fa-pull-left,
 .fab.fa-pull-left,
-.fa-pull-left.github,
-.fa-pull-left.youtube,
-.fa-pull-left.instagram,
-.fa-pull-left.twitter {
+.fa-pull-left.github::before,
+.fa-pull-left.youtube::before,
+.fa-pull-left.instagram::before,
+.fa-pull-left.twitter::before {
   margin-right: 0.3em;
 }
 .fa.fa-pull-right,
@@ -144,10 +144,10 @@
 .far.fa-pull-right,
 .fal.fa-pull-right,
 .fab.fa-pull-right,
-.fa-pull-right.github,
-.fa-pull-right.youtube,
-.fa-pull-right.instagram,
-.fa-pull-right.twitter {
+.fa-pull-right.github::before,
+.fa-pull-right.youtube::before,
+.fa-pull-right.instagram::before,
+.fa-pull-right.twitter::before {
   margin-left: 0.3em;
 }
 
@@ -6123,7 +6123,7 @@ readers do not read off random characters that represent icons */
   src: url("./fontawesome/webfonts/fa-brands-400.eot");
   src: url("./fontawesome/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("./fontawesome/webfonts/fa-brands-400.woff2") format("woff2"), url("./fontawesome/webfonts/fa-brands-400.woff") format("woff"), url("./fontawesome/webfonts/fa-brands-400.ttf") format("truetype"), url("./fontawesome/webfonts/fa-brands-400.svg#fontawesome") format("svg");
 }
-.fab, .github, .youtube, .instagram, .twitter {
+.fab, .github::before, .youtube::before, .instagram::before, .twitter::before {
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
 }
@@ -6146,7 +6146,7 @@ header {
 main {
   width: 80%;
   margin: auto;
-  padding-bottom: 100pt;
+  padding-bottom: 150pt;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -6188,6 +6188,7 @@ section > img {
   flex: 3 1 150pt;
   width: 150pt;
   padding: 20pt;
+  max-width: calc(50% - 40pt);
 }
 
 .portfolio-item > img {
@@ -6195,12 +6196,12 @@ section > img {
   border-radius: 6pt;
 }
 
-.portfolio-item > h2, .portfolio-item > p {
+.item-title, .item-description {
   padding: 10pt;
   font-size: 18pt;
 }
 
-.portfolio-item > h2 {
+.item-title {
   font-weight: bolder;
 }
 
@@ -6242,6 +6243,34 @@ nav > a {
 }
 
 /* footer styles */
+.footer-text {
+  color: var(--dark-gray);
+  font-weight: lighter;
+  font-size: 12pt;
+  line-height: 18pt;
+  text-transform: lowercase;
+}
+
+.twitter::before {
+  content: "";
+  display: block;
+}
+
+.instagram::before {
+  content: "";
+  display: block;
+}
+
+.youtube::before {
+  content: "";
+  display: block;
+}
+
+.github::before {
+  content: "";
+  display: block;
+}
+
 footer {
   position: fixed;
   bottom: 0pt;
@@ -6260,7 +6289,6 @@ footer div a {
   color: var(--dark-gray);
   text-decoration: none;
   font-size: 10pt;
-  /*text-align: center;*/
   padding: 10pt;
   transition: color 0.5s;
   transition-timing-function: ease-in-out;
@@ -6280,30 +6308,6 @@ div.footer-links {
   width: 80%;
   margin: auto;
   justify-content: between;
-}
-
-.footer-text {
-  color: var(--dark-gray);
-  font-weight: lighter;
-  font-size: 12pt;
-  line-height: 18pt;
-  text-transform: lowercase;
-}
-
-.twitter:before {
-  content: "";
-}
-
-.instagram:before {
-  content: "";
-}
-
-.youtube:before {
-  content: "";
-}
-
-.github:before {
-  content: "";
 }
 
 /*# sourceMappingURL=base_style.css.map */

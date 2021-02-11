@@ -26,7 +26,7 @@ header {
 main {
 	width: 80%;
 	margin: auto;
-	padding-bottom: 100pt;
+	padding-bottom: 150pt;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,18 +68,19 @@ section>img {
 	flex: 3 1 150pt;
 	width: 150pt;
 	padding: 20pt;
+	max-width: calc(50% - 40pt);
 }
 .portfolio-item>img {
 	width: 100%;
 	border-radius: 6pt;
 }
 
-.portfolio-item>h2, .portfolio-item>p {
+.item-title, .item-description {
 	padding: 10pt;
 	font-size: 18pt;
 }
 
-.portfolio-item>h2 {
+.item-title {
 	font-weight: bolder;
 }
 
@@ -123,6 +124,43 @@ nav>a {
 
 
 /* footer styles */
+.footer-text {
+	color: var(--dark-gray);
+	font-weight: lighter;
+	font-size: 12pt;
+	line-height: 18pt;
+	text-transform: lowercase;
+}
+
+.twitter::before {
+	@extend %fa-icon;
+	@extend .fab;
+	content: fa-content($fa-var-twitter);
+	display: block;
+}
+
+.instagram::before {
+	@extend %fa-icon;
+	@extend .fab;
+	content: fa-content($fa-var-instagram);
+	display: block;
+}
+
+.youtube::before {
+	@extend %fa-icon;
+	@extend .fab;
+	content: fa-content($fa-var-youtube);
+	display: block;
+}
+
+.github::before {
+	@extend %fa-icon;
+	@extend .fab;
+	content: fa-content($fa-var-github);
+	display: block;
+}
+
+
 footer {
 	position: fixed;
 	bottom: 0pt;
@@ -141,7 +179,6 @@ footer div a {
 	color: var(--dark-gray);
 	text-decoration: none;
 	font-size: 10pt;
-	/*text-align: center;*/
 	padding: 10pt;
 	transition: color 0.5s;
 	transition-timing-function: ease-in-out;
@@ -163,43 +200,4 @@ div.footer-links {
 	justify-content: between;
 }
 
-.footer-text {
-	color: var(--dark-gray);
-	font-weight: lighter;
-	font-size: 12pt;
-	line-height: 18pt;
-	text-transform: lowercase;
-}
-
-.twitter {
-	@extend %fa-icon;
-	@extend .fab;
-	&:before {
-		content: fa-content($fa-var-twitter);
-	}
-}
-
-.instagram {
-	@extend %fa-icon;
-	@extend .fab;
-	&:before {
-		content: fa-content($fa-var-instagram);
-	}
-}
-
-.youtube {
-	@extend %fa-icon;
-	@extend .fab;
-	&:before {
-		content: fa-content($fa-var-youtube);
-	}
-}
-
-.github {
-	@extend %fa-icon;
-	@extend .fab;
-	&:before {
-		content: fa-content($fa-var-github);
-	}
-}
 

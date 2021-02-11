@@ -1,6 +1,43 @@
-@media screen and (max-width: 800px) {
-	.portfolio-item>img {
-		width: 33%;
-		float: left;
+@media screen and (max-width: 700px) {
+
+	.section.active ul {
+		display: block;
+		width: 100%;	
+		max-width: 100%;
 	}
+
+	.portfolio-item {
+		width: 100%;
+		max-width: 100%;
+		padding: 20pt;
+		border-bottom: solid;
+		border-width: 1px;
+		padding: 20pt 0pt;
+		box-sizing: border-box;
+	}
+
+	.portfolio-item>img {
+		display: inline;
+		width: 33%;
+		margin-right: 20pt;
+	}
+
+	.item-text {
+		display: inline;
+		position: absolute;
+		margin-bottom: 10pt;
+	}
+
+	.item-title {
+		padding: 10pt 0pt;
+	}
+
+	.item-description {
+		display: inline;
+		font-size: 14pt;
+		line-height: 20pt;
+		padding: 0pt;
+		justify-content: left;
+	}
+
 }
