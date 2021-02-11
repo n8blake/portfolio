@@ -1,5 +1,14 @@
 @media screen and (max-width: 700px) {
 
+	nav {
+		width: 100%;
+	}
+
+	nav>a {
+		flex: 1;
+		font-size: 5vw;
+	}
+
 	.section.active ul {
 		display: block;
 		width: 100%;	
@@ -14,17 +23,20 @@
 		border-width: 1px;
 		padding: 20pt 0pt;
 		box-sizing: border-box;
+		display: flex;
+		flex-direction: row;
 	}
 
 	.portfolio-item>img {
 		display: inline;
-		width: 33%;
+		width: 25vw;
+		height: 25vw;
 		margin-right: 20pt;
 	}
 
 	.item-text {
-		display: inline;
-		position: absolute;
+		left: 40%;
+		max-width: 60%;
 		margin-bottom: 10pt;
 	}
 
@@ -38,6 +50,10 @@
 		line-height: 20pt;
 		padding: 0pt;
 		justify-content: left;
+	}
+
+	.item-text>a {
+		margin-left: 0pt;
 	}
 
 }
