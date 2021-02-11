@@ -1,5 +1,4 @@
 function activate(element){
-	//console.log(element);
 	let target = element.getAttribute('data-target');
 	targetSection = document.getElementById(target + '-section');
 	if(target === 'about'){
