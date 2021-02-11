@@ -3,6 +3,14 @@
 	--dark-gray: #9fa4ad;
 }
 
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
 @import url("https://use.typekit.net/fwo4yqm.css");
 @import "./fontawesome/scss/fontawesome.scss";
 @import "./fontawesome/scss/solid.scss";
@@ -90,6 +98,30 @@ section>img {
 	font-size: 28pt;
 	font-weight: bolder;
 	margin: 40pt 0pt;
+}
+
+a.portfolio-link {
+	margin: 10pt;
+	text-decoration: none;
+	padding: 5pt;
+	border-style: solid;
+	border-width: 2pt;
+	border-radius: 10pt;
+	color: var(--primary);
+	border-color: var(--primary);
+	transition: all 0.25s;
+	transition-property: color, border-color, background-color;
+	transition-timing-function: ease-in-out;
+}
+
+a.portfolio-link:hover {
+	background-color: var(--primary);
+	color: #FFF;
+}
+
+a.portfolio-link:active {
+	background-color: shade(#023859, 30%);
+	border-color: shade(#023859, 40%);
 }
 
 /* Nav styles */

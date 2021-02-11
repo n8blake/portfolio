@@ -46,7 +46,7 @@
 					<div class="item-text">
 						<h2 class="item-title">Project 1</h2>
 						<p class="item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-						<a href="#">Demo</a>
+						<a href="#" class="portfolio-link">Demo</a>
 					</div>
 				</li>
 				

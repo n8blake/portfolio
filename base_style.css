@@ -6213,6 +6213,30 @@ section > img {
   margin: 40pt 0pt;
 }
 
+a.portfolio-link {
+  margin: 10pt;
+  text-decoration: none;
+  padding: 5pt;
+  border-style: solid;
+  border-width: 2pt;
+  border-radius: 10pt;
+  color: var(--primary);
+  border-color: var(--primary);
+  transition: all 0.25s;
+  transition-property: color, border-color, background-color;
+  transition-timing-function: ease-in-out;
+}
+
+a.portfolio-link:hover {
+  background-color: var(--primary);
+  color: #FFF;
+}
+
+a.portfolio-link:active {
+  background-color: #01273e;
+  border-color: #012235;
+}
+
 /* Nav styles */
 nav {
   width: 60%;
