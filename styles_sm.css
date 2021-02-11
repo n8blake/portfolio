@@ -57,3 +57,12 @@
 	}
 
 }
+
+@media screen and (max-width: 500px) {
+	.about-image {
+		display: block;
+		float: none;
+		margin: auto;
+		margin-bottom: 20pt;
+	}
+}
