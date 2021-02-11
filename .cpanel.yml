@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home3/blakeink/public_html/portfolio/
+    - export DEPLOYPATH=/home3/blakeink/public_html/n8blake/
     - /bin/cp -R * $DEPLOYPATH
