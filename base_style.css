@@ -3,6 +3,7 @@
 :root {
   --primary: #023859;
   --dark-gray: #9fa4ad;
+  --light: #EFEFFF;
 }
 
 /*!
@@ -6133,7 +6134,7 @@ readers do not read off random characters that represent icons */
 }
 
 body {
-  font-family: soleil, futura, sans-serif;
+  font-family: soleil, Lato, futura, sans-serif;
   font-style: normal;
 }
 
@@ -6221,6 +6222,25 @@ section > img {
 
 .item-text > a > img {
   width: 50%;
+}
+
+.item-badges {
+  display: block;
+  margin-top: 10pt;
+}
+
+.portfolio-badge {
+  display: inline;
+  text-decoration: none;
+  text-align: center;
+  font-size: 8pt;
+  font-weight: lighter;
+  background-color: var(--primary);
+  color: var(--light);
+  flex: 1 1 50pt;
+  padding: 4pt 8pt;
+  border-radius: 16pt;
+  margin-right: 10pt;
 }
 
 p > a {

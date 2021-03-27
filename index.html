@@ -16,16 +16,16 @@
 	</header>
 	<main>
 		<nav>
-			<a href="#" id="about-link" data-target="about" class="nav-link active" onclick="activate(this)">about</a>
-			<a href="#" id="projects-link" data-target="projects" class="nav-link" onclick="activate(this)">projects</a>
+			<a href="#" id="about-link" data-target="about" class="nav-link" onclick="activate(this)">about</a>
+			<a href="#" id="projects-link" data-target="projects" class="nav-link active" onclick="activate(this)">projects</a>
 		</nav>
-		<section class="section active" id="about-section">
+		<section class="section" id="about-section">
 			<img class="about-image" src="self_portrait_sm.png" />
 			<p>Hi, I'm Nate. I'm a self-taught graphic artist and web developer. I got my start doing small designs and projects in high school for neigbors and local sports teams. I have since gone on to develop complex web tools for clients around the world. </p>
 			<p>Currenly I'm working on personal projects and occationally taking clients. If you are interested in working with me please <a href="mailto: hello@blake-ink.com">shoot me an email!</a></p>
 		</section>
-		<section class="section" id="projects-section">
-			<ul>
+		<section class="section active" id="projects-section">
+			<ul id="portfolio-items-list">
 				<li class="portfolio-item">
 					<a href="https://apps.apple.com/us/app/radian-rule/id1487263442#?platform=iphone"><img src="./resources/Radian-Rule-1024.png" alt="Radian Rule Icon"></a>
 					<div class="item-text">
@@ -75,5 +75,6 @@
 			<a href="https://www.youtube.com/user/n8blake" target="_blank" class="youtube">YouTube</a></div>
 	</footer>
 	<script type="text/javascript" src="portfolio.js"></script>
+	<script type="text/javascript" src="portfolio-items.js"></script>
 </body>
 </html>
