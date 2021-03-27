@@ -27,7 +27,7 @@
 		flex-direction: row;
 	}
 
-	.portfolio-item>img {
+	.portfolio-item>a>img {
 		display: inline;
 		width: 25vw;
 		height: 25vw;

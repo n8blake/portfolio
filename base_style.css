@@ -6191,7 +6191,7 @@ section > img {
   max-width: calc(50% - 40pt);
 }
 
-.portfolio-item > img {
+.portfolio-item > a > img {
   width: 100%;
   border-radius: 6pt;
 }
