@@ -9,52 +9,6 @@
 		font-size: 5vw;
 	}
 
-	.section.active ul {
-		display: block;
-		width: 100%;	
-		max-width: 100%;
-	}
-
-	.portfolio-item {
-		width: 100%;
-		max-width: 100%;
-		padding: 20pt;
-		border-bottom: solid;
-		border-width: 1px;
-		padding: 20pt 0pt;
-		box-sizing: border-box;
-		display: flex;
-		flex-direction: row;
-	}
-
-	.portfolio-item>a>img {
-		display: inline;
-		width: 25vw;
-		height: 25vw;
-		margin-right: 20pt;
-	}
-
-	.item-text {
-		left: 40%;
-		max-width: 60%;
-		margin-bottom: 10pt;
-	}
-
-	.item-title {
-		padding: 10pt 0pt;
-	}
-
-	.item-description {
-		display: inline;
-		font-size: 14pt;
-		line-height: 20pt;
-		padding: 0pt;
-		justify-content: left;
-	}
-
-	.item-text>a {
-		margin-left: 0pt;
-	}
 
 }
 

@@ -9,7 +9,10 @@ const PORTFOLIO_ITEMS = [
 		'color':'#000',
 		'image':'Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg',
 		'link':'https://apps.apple.com/us/app/radian-rule/id1487263442#?platform=iphone'
-	}]
+	}],
+	'screenShots':[{
+		'image':'radian_rule_screen.png',
+	}],
 	},
 	{'name':'Weather App',
 	'description':'A web app that uses the OpenWeather API to display general weather data.',
@@ -28,9 +31,11 @@ const PORTFOLIO_ITEMS = [
 		'color':'#000',
 		'link':'github.com'
 		}
-		]
+		],
+	'screenShots':[{
+		'image':'weather_app_screen.png',
+	}],
 	},
-
 ];
 
 const portfolioItemsList = document.querySelector('#portfolio-items-list');
@@ -43,20 +48,6 @@ const IMAGE_RESOURCE_BASE = './resources/';
 const makePortfoliItem = (item) => {
 	const itemListElement = document.createElement('li');
 	itemListElement.classList.add('portfolio-item');
-	// const itemImageLink = document.createElement('a');
-	// itemImageLink.target = "_blank";
-	// itemImageLink.href = item.link;
-	// const itemImage = document.createElement('img');
-	// itemImage.src = IMAGE_RESOURCE_BASE + item.image;
-	// itemImageLink.appendChild(itemImage);
-	// itemListElement.appendChild(itemImageLink);
-	// const itemTextDiv = document.createElement('div');
-	// itemTextDiv.classList.add('item-text');
-	// const itemTextTitle = document.createElement('h2');
-	// itemTextTitle.classList.add('item-title');
-	// itemTextTitle.textContent = item.name;
-	// itemTextDiv.appendChild(itemTextTitle);
-	// itemListElement.appendChild(itemTextDiv);
 	let itemListElementInnerHTML = `
 			<a href="${item.link}">
 				<img src=".${IMAGE_RESOURCE_BASE + item.image}" >
@@ -65,17 +56,28 @@ const makePortfoliItem = (item) => {
 				<h2 class="item-title">${item.name}</h2>
 				<p class="item-description">${item.description}</p>
 				`;
-	let itemBadges = `<div class="item-badges">`
-	item.badges.forEach(badge => {
-		//console.log(makeBadge(badge));
-		itemBadges = itemBadges + makeBadge(badge);	
-		console.log(itemListElementInnerHTML);	
-	});
-	itemBadges = itemBadges + `</div>`;
-	itemListElementInnerHTML = itemListElementInnerHTML + itemBadges + `
-			</div>
-		
-	`;
+	if(item.badges){
+		// add item badges
+		let itemBadges = `<div class="item-badges">`
+		item.badges.forEach(badge => {
+			itemBadges = itemBadges + makeBadge(badge);		
+		});
+		itemBadges = itemBadges + `</div>`;
+		itemListElementInnerHTML = itemListElementInnerHTML + itemBadges;
+	}
+	if(item.screenShots){
+		// add screenshots
+		let itemScreenShots = `<div class="item-screen-shots"> `;
+		item.screenShots.forEach(screenShot => {
+			//console.log(screenShot);
+			itemScreenShots = itemScreenShots + makeScreenShotElement(screenShot);
+			console.log(itemScreenShots);
+		});
+		itemScreenShots = itemScreenShots + `</div>`;
+		itemListElementInnerHTML = itemListElementInnerHTML + itemScreenShots;
+	}
+	//close div and return 
+	itemListElementInnerHTML = itemListElementInnerHTML + `</div>`;
 	itemListElement.innerHTML = itemListElementInnerHTML;
 	return itemListElement;
 };
@@ -96,9 +98,39 @@ const makeBadge = (badge) => {
 		badgeHTML = badgeHTML + `<img src="${IMAGE_RESOURCE_BASE + badge.image}">`;
 	}
 	badgeHTML = badgeHTML +`</a>`;
-	console.log(badgeHTML);
 	return badgeHTML;
 };
+
+// take a screenshot resource and make an html element string for it
+const makeScreenShotElement = (screenShot) => {
+	let screenShotElement = `<a href="#" class="screen-shot-link" >
+		<img class="screen-shot-thumbnail" src="${IMAGE_RESOURCE_BASE + screenShot.image}" onclick="enlarge(this)"/>
+	</a>
+	`;
+	return screenShotElement;
+}
+
+const enlarge = (screenShot) => {
+	const body = document.querySelector('body');
+	console.log(screenShot.src);
+	const backdrop = document.createElement('div');
+	backdrop.classList.add('modal-backdrop');
+	backdrop.id = 'modal-backdrop';
+	backdrop.addEventListener('click', close);
+	body.appendChild(backdrop);
+	const image = document.createElement('img');
+	image.src = screenShot.src;
+	image.classList.add('enlarged-screen-shot');
+	image.id = 'active-enlarged-image';
+	body.appendChild(image);
+}
+
+const close = () => {
+	const backdrop = document.querySelector('#modal-backdrop');
+	const image = document.querySelector('#active-enlarged-image');
+	backdrop.remove();
+	image.remove();
+}
 
 PORTFOLIO_ITEMS.forEach(item => {
 	const itemListElement = makePortfoliItem(item);

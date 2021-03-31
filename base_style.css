@@ -3,7 +3,7 @@
 :root {
   --primary: #023859;
   --dark-gray: #9fa4ad;
-  --light: #EFEFFF;
+  --light: #EFEFEF;
 }
 
 /*!
@@ -6169,10 +6169,9 @@ section {
 }
 
 .section.active ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 
 section > img {
@@ -6185,25 +6184,63 @@ section > img {
   shape-outside: circle(50%);
 }
 
+.modal-backdrop {
+  background-color: none;
+  opacity: 1;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0pt;
+}
+
+.enlarged-screen-shot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90%;
+  max-width: 90%;
+  filter: drop-shadow(0 0 0.75rem var(--dark-gray));
+}
+
 .portfolio-item {
-  flex: 3 1 150pt;
-  width: 150pt;
+  width: 100%;
+  max-width: 100%;
   padding: 20pt;
-  max-width: calc(50% - 40pt);
+  border-bottom: solid;
+  border-color: var(--light);
+  border-width: 1px;
+  padding: 20pt 0pt;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
 }
 
 .portfolio-item > a > img {
-  width: 100%;
+  display: inline;
+  width: 25vw;
+  height: 25vw;
+  margin-right: 20pt;
   border-radius: 6pt;
 }
 
 .item-title, .item-description {
-  padding: 10pt;
+  padding: 10pt 0pt;
   font-size: 18pt;
 }
 
 .item-title {
   font-weight: bolder;
+}
+
+.item-description {
+  display: inline;
+  font-size: 14pt;
+  line-height: 20pt;
+  padding: 0pt;
+  justify-content: left;
 }
 
 .name-hero {
@@ -6214,10 +6251,15 @@ section > img {
   margin: 40pt 0pt;
 }
 
+.item-text {
+  left: 40%;
+  max-width: 60%;
+  margin-bottom: 10pt;
+}
+
 .item-text > a {
   display: block;
   margin-top: 20pt;
-  margin-left: 10pt;
 }
 
 .item-text > a > img {
@@ -6287,6 +6329,15 @@ a.portfolio-link:hover {
 a.portfolio-link:active {
   background-color: #01273e;
   border-color: #012235;
+}
+
+img.screen-shot-thumbnail {
+  max-height: 128pt;
+  margin-top: 20pt;
+  border: solid 1pt;
+  border-color: var(--light);
+  border-radius: 2pt;
+  padding: 4pt;
 }
 
 /* Nav styles */
