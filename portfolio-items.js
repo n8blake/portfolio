@@ -40,7 +40,7 @@ const PORTFOLIO_ITEMS = [
 	'description':'This web application delivers recommended drink pairings for movies and tv series.',
 	'link':'https://n8blake.github.io/bev-films/',
 	'github':'https://github.com/n8blake/bev-films',
-	'image':'Bev-films-1024.png',
+	'image':'bev-films-1024.png',
 	'badges':[{
 		'label':'View on GitHub',
 		'showLabel':true,
@@ -76,7 +76,7 @@ const PORTFOLIO_ITEMS = [
 const portfolioItemsList = document.querySelector('#portfolio-items-list');
 portfolioItemsList.innerHTML = "";
 
-const IMAGE_RESOURCE_BASE = 'resources/';
+const IMAGE_RESOURCE_BASE = './resources/';
 
 
 
