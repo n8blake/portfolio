@@ -16,41 +16,98 @@ const PORTFOLIO_ITEMS = [
 	},
 	{'name':'Weather App',
 	'description':'A web app that uses the OpenWeather API to display general weather data.',
-	'link':'localhost:8899',
-	'github':'',
+	'link':'https://github.com/n8blake/WeatherApp',
+	'github':'https://github.com/n8blake/WeatherApp',
 	'image':'WeatherApp-1024.png',
 	'badges':[{
 		'label':'View on GitHub',
 		'showLabel':true,
 		'color':'#000',
-		'link':'github.com'
+		'link':'https://github.com/n8blake/WeatherApp'
 		},
 		{
 		'label':'View Live Demo',
 		'showLabel':true,
 		'color':'#000',
-		'link':'github.com'
+		'link':'https://n8blake.github.io/WeatherApp/'
 		}
 		],
 	'screenShots':[{
 		'image':'weather_app_screen.png',
 	}],
 	},
+	{'name':'Bev-Films',
+	'description':'This web application delivers recommended drink pairings for movies and tv series.',
+	'link':'https://n8blake.github.io/bev-films/',
+	'github':'https://github.com/n8blake/bev-films',
+	'image':'Bev-films-1024.png',
+	'badges':[{
+		'label':'View on GitHub',
+		'showLabel':true,
+		'color':'#000',
+		'link':'https://github.com/n8blake/bev-films'
+		},
+		{
+		'label':'View Live Demo',
+		'showLabel':true,
+		'color':'#000',
+		'link':'https://n8blake.github.io/bev-films/'
+		}
+		],
+	'screenShots':[{
+		'image':'Bev-Films_Demo.png',
+	}],
+	},
 ];
+
+// const portfolioItemsURL = 'https://n8blake:8890/portfolio_items.php';
+// fetch(portfolioItemsURL).then(response =>{
+// 	return response.json();
+// }).then(result => {
+// 	console.log(result);
+// 	result.forEach(item => {
+// 		const itemListElement = makePortfoliItem(item);
+// 		portfolioItemsList.appendChild(itemListElement);
+// 	});
+// });
+
+
 
 const portfolioItemsList = document.querySelector('#portfolio-items-list');
 portfolioItemsList.innerHTML = "";
 
-const IMAGE_RESOURCE_BASE = './resources/';
+const IMAGE_RESOURCE_BASE = 'resources/';
+
+
 
 // make portfolio items
 
 const makePortfoliItem = (item) => {
+	if(item.links){
+		item.links.forEach(link => {
+			console.log(link);
+			if(link.type === 'demo'){
+				item.link = link.url;
+			}
+			if(link.type === 'icon'){
+				item.image = link.url;
+			}
+			if(link.type === 'screenshot'){
+				if(!item.screenShots){
+					item.screenShots = [];
+				}
+				const screenShot = {};
+				screenShot.image = link.url;
+				item.screenShots.push(screenShot);
+			}
+		});
+	}
+
 	const itemListElement = document.createElement('li');
 	itemListElement.classList.add('portfolio-item');
 	let itemListElementInnerHTML = `
 			<a href="${item.link}">
-				<img src=".${IMAGE_RESOURCE_BASE + item.image}" >
+				<img src="${IMAGE_RESOURCE_BASE + item.image}" >
 			</a>
 			<div class="item-text">
 				<h2 class="item-title">${item.name}</h2>
@@ -71,7 +128,7 @@ const makePortfoliItem = (item) => {
 		item.screenShots.forEach(screenShot => {
 			//console.log(screenShot);
 			itemScreenShots = itemScreenShots + makeScreenShotElement(screenShot);
-			console.log(itemScreenShots);
+			//console.log(itemScreenShots);
 		});
 		itemScreenShots = itemScreenShots + `</div>`;
 		itemListElementInnerHTML = itemListElementInnerHTML + itemScreenShots;
